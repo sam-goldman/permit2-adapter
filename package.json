@@ -7,6 +7,7 @@
     "url": "https://github.com/Mean-Finance"
   },
   "devDependencies": {
+    "@sphinx-labs/plugins": "^0.26.4",
     "prettier": "^2.8.7",
     "solhint-community": "^3.5.0"
   },
