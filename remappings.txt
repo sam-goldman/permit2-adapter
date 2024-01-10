@@ -3,3 +3,7 @@ forge-std/=lib/forge-std/src/
 src/=src/
 @openzeppelin/=lib/openzeppelin-contracts/
 @call-simulation/=lib/call-simulation/src
+@sphinx-labs/plugins/=node_modules/@sphinx-labs/plugins/contracts/foundry/
+@sphinx-labs/contracts/=node_modules/.pnpm/@sphinx-labs+contracts@0.15.1/node_modules/@sphinx-labs/contracts/
+sphinx-forge-std/=node_modules/.pnpm/@sphinx-labs+plugins@0.26.2_@nomiclabs+hardhat-ethers@2.2.3_@nomiclabs+hardhat-etherscan@3.1._mra3cbyjh4edap3q3evpodna6e/node_modules/sphinx-forge-std/src/
+sphinx-solmate/=node_modules/.pnpm/@sphinx-labs+plugins@0.26.2_@nomiclabs+hardhat-ethers@2.2.3_@nomiclabs+hardhat-etherscan@3.1._mra3cbyjh4edap3q3evpodna6e/node_modules/sphinx-solmate/src/
