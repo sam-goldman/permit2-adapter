@@ -2,28 +2,26 @@
 pragma solidity >=0.8.19;
 
 import { Script } from "forge-std/Script.sol";
+import { Sphinx, Network } from "@sphinx-labs/plugins/SphinxPlugin.sol";
 
-abstract contract BaseScript is Script {
-  /// @dev Included to enable compilation of the script without a $MNEMONIC environment variable.
-  string internal constant TEST_MNEMONIC = "test test test test test test test test test test test junk";
-
+abstract contract BaseScript is Script, Sphinx {
   /// @dev Needed for the deterministic deployments.
   bytes32 internal constant ZERO_SALT = bytes32(0);
 
-  /// @dev The address of the contract deployer.
-  address internal deployer;
-
-  /// @dev Used to derive the deployer's address.
-  string internal mnemonic;
-
   constructor() {
-    mnemonic = vm.envOr("MNEMONIC", TEST_MNEMONIC);
-    (deployer,) = deriveRememberKey({ mnemonic: mnemonic, index: 4 });
-  }
-
-  modifier broadcaster() {
-    vm.startBroadcast(deployer);
-    _;
-    vm.stopBroadcast();
+    sphinxConfig.owners = [address(0)]; // Add owner address(es)
+    sphinxConfig.orgId = ""; // Add org ID
+    sphinxConfig.mainnets = [
+      Network.arbitrum,
+      Network.avalanche,
+      Network.bnb,
+      Network.gnosis,
+      Network.ethereum,
+      Network.optimism,
+      Network.polygon
+    ];
+    sphinxConfig.testnets = [Network.optimism_sepolia, Network.arbitrum_sepolia];
+    sphinxConfig.projectName = "Universal_Permit2_Adapter";
+    sphinxConfig.threshold = 1;
   }
 }

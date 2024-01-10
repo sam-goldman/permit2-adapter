@@ -8,7 +8,7 @@ import { BaseScript } from "./Base.s.sol";
 IPermit2 constant PERMIT2 = IPermit2(0x000000000022D473030F116dDEE9F6B43aC78BA3);
 
 contract DeployUniversalAdapter is BaseScript {
-  function run() public broadcaster returns (UniversalPermit2Adapter _adapter) {
+  function run() public sphinx returns (UniversalPermit2Adapter _adapter) {
     _adapter = new UniversalPermit2Adapter{ salt: ZERO_SALT }(PERMIT2);
     console2.log("Permit2 Deployed:", address(_adapter));
   }
