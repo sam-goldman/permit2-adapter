@@ -2,7 +2,7 @@ Follow these instructions to deploy with Sphinx on a couple testnets. It should 
 
 If you want to learn more about Sphinx, check out our [GitHub page](https://github.com/sphinx-labs/sphinx).
 
-Also, if you want to see the diff of this integration against your main branch, click [here](TODO).
+Also, if you want to see the diff of this integration against your main branch, click [here](https://github.com/sam-goldman/permit2-adapter/commit/a2d8a97036181ce210c970148e29620bb863f753).
 
 1. Clone this fork of your repo:
 ```
